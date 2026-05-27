@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Learn &amp; Influence — Школа цифрової грамотності для жінок ВПО</title>
+<meta name="description" content="Безкоштовна школа цифрової громадянської грамотності для жінок — внутрішньо переміщених осіб. Реалізує ГО «Українська Валькірія».">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0f1d3a;--gold:#c8a44c;--ink:#111827;--muted:#6b7280;--bg:#fbfaf7;--line:#e6e2d6;--accent:#d23a6a}
+  *{box-sizing:border-box}html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Manrope',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;color:var(--navy);line-height:1.15;margin:0 0 .5em}
+  h1{font-size:clamp(2rem,4.6vw,3.4rem);font-weight:700}
+  h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700}
+  h3{font-size:1.2rem;font-weight:600}
+  p{margin:0 0 1em}
+  a{color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:.2s}
+  a:hover{border-bottom-color:var(--gold)}
+  .container{max-width:1140px;margin:0 auto;padding:0 24px}
+  .eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px}
+  .btn{display:inline-block;padding:14px 28px;border-radius:999px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:.2s}
+  .btn-gold{background:var(--gold);color:#1a1303}
+  .btn-gold:hover{background:#b89238}
+  .btn-outline{background:transparent;border-color:var(--navy);color:var(--navy)}
+  .btn-outline:hover{background:var(--navy);color:#fff}
+
+  header{position:sticky;top:0;background:rgba(251,250,247,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
+  header .container{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--navy);border:0}
+  .brand span{display:block;font-family:'Manrope',sans-serif;font-size:.72rem;font-weight:500;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:2px}
+  nav{display:flex;gap:24px}
+  nav a{font-size:.95rem;color:var(--ink);border:0}
+  nav a:hover{color:var(--gold)}
+  @media(max-width:720px){nav{display:none}}
+
+  .hero{padding:80px 0 70px;background:linear-gradient(180deg,#fbfaf7 0%,#f1ece0 100%)}
+  .hero h1 strong{color:var(--accent);font-style:italic}
+  .hero .lead{font-size:1.18rem;color:#374151;max-width:680px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+
+  section{padding:72px 0}
+  section.alt{background:#fff;border-block:1px solid var(--line)}
+  .section-head{max-width:760px;margin:0 auto 44px;text-align:center}
+  .section-head p{color:var(--muted);font-size:1.05rem}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:0 8px 24px rgba(15,29,58,.06);transition:.25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(15,29,58,.1)}
+  .card .num{font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gold);font-weight:700;line-height:1;margin-bottom:6px}
+  .card p{color:#4b5563;font-size:.95rem;margin:0}
+
+  .facts{background:linear-gradient(135deg,#fff 0%,#f5efe1 100%);border:1px solid var(--line);border-radius:22px;padding:44px}
+  .facts ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .facts li{display:flex;gap:12px;align-items:flex-start}
+  .facts li::before{content:"";flex:0 0 10px;width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:9px}
+  @media(max-width:720px){.grid-3,.grid-2,.facts ul{grid-template-columns:1fr}}
+
+  .apply{background:linear-gradient(135deg,var(--navy),#091226);color:#fff;border-radius:22px;padding:56px}
+  .apply h2{color:#fff}.apply p{color:#cbd5e1}
+  .apply .form-wrap{margin-top:26px;background:#fff;border-radius:14px;overflow:hidden;min-height:720px}
+  .apply .form-wrap iframe{width:100%;border:0;display:block}
+  .apply .fallback{margin-top:18px;font-size:.92rem;color:#94a3b8}
+  .apply .fallback a{color:var(--gold);border-bottom:1px solid rgba(200,164,76,.4)}
+  @media(max-width:720px){.apply{padding:32px 22px}}
+
+  footer{background:var(--navy);color:#cbd5e1;padding:50px 0 26px;margin-top:60px}
+  footer .donors{background:#fff;padding:26px;border-radius:14px}
+  .donors-title{font-size:.74rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;text-align:center}
+  .donors-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:30px}
+  .donors-row svg{height:50px;width:auto}
+  .footer-bottom{margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.88rem;color:#94a3b8}
+  .footer-bottom a{color:var(--gold);border:0}
+  .footer-bottom a:hover{color:#fff}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="#" class="brand">Learn &amp; Influence<span>Школа цифрової грамотності</span></a>
+    <nav>
+      <a href="#modules">Програма</a>
+      <a href="#audience">Для кого</a>
+      <a href="#apply">Заявка</a>
+    </nav>
+    <a href="#apply" class="btn btn-gold">Подати заявку</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow">Анонс набору · 2026</span>
+    <h1>Цифрова грамотність — це <strong>сила голосу</strong> жінок ВПО.</h1>
+    <p class="lead">Безкоштовна школа для жінок — внутрішньо переміщених осіб. Цифрові навички, онлайн-безпека, медіаграмотність і громадянська участь — щоб ваш голос було чути там, де ухвалюють рішення.</p>
+    <div class="hero-actions">
+      <a href="#apply" class="btn btn-gold">Подати заявку →</a>
+      <a href="#modules" class="btn btn-outline">Програма школи</a>
+    </div>
+  </div>
+</section>
+
+<section id="modules" class="alt">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Програма школи</span>
+      <h2>Шість модулів навчання</h2>
+      <p>«Learn &amp; Influence» поєднує цифрову грамотність із громадянською участю. Шість блоків — від базових онлайн-сервісів до власних адвокаційних кампаній.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card"><div class="num">01</div><h3>Цифрова грамотність &amp; «Дія»</h3><p>Електронні послуги держави, банкінг, ідентифікація, документи онлайн. Робота з е-кабінетом ВПО.</p></div>
+      <div class="card"><div class="num">02</div><h3>Кібербезпека</h3><p>Паролі, двофакторна автентифікація, протидія цифровому насильству, безпека дітей онлайн.</p></div>
+      <div class="card"><div class="num">03</div><h3>Медіаграмотність</h3><p>Як працює пропаганда й дезінформація, верифікація фото та відео, fact-checking, критичне мислення.</p></div>
+      <div class="card"><div class="num">04</div><h3>Громадянська участь онлайн</h3><p>Інструменти впливу: e-petitions, бюджети участі, звернення до ОМС, контакти з громадою.</p></div>
+      <div class="card"><div class="num">05</div><h3>Цифрова адвокація</h3><p>Створення кампаній, соцмережі для впливу, робота з даними для аргументації позицій.</p></div>
+      <div class="card"><div class="num">06</div><h3>Менторська підтримка</h3><p>Індивідуальний супровід, спільнота випускниць, доступ до мережі партнерських організацій.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="audience">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Цільова аудиторія</span>
+      <h2>Жінки — внутрішньо переміщені особи з усієї України</h2>
+    </div>
+    <div class="facts">
+      <ul>
+        <li>Жінки 18+, що мають статус ВПО або були вимушені змінити місце проживання.</li>
+        <li>Без вимог щодо попереднього рівня цифрових навичок — навчаємо з базового рівня.</li>
+        <li>Пріоритет — жінки із сільських громад, прифронтових регіонів і ті, хто доглядає за дітьми.</li>
+        <li>Доступ через смартфон достатній — заняття адаптовані під мобільний пристрій.</li>
+        <li>Українською мовою. Усі матеріали зберігаються для повторного перегляду.</li>
+        <li>Гнучкий графік: онлайн-сесії у вечірні години та у вихідні.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="container">
+    <div class="apply">
+      <span class="eyebrow" style="color:#e8d3a1">Подати заявку</span>
+      <h2>Хочеш приєднатися до школи?</h2>
+      <p>Заповни форму нижче. Після подання ми зв'яжемося з тобою електронною поштою протягом 5 робочих днів.</p>
+      <div class="form-wrap">
+        <iframe src="https://docs.google.com/forms/d/e/REPLACE_WITH_FORM_ID/viewform?embedded=true" height="720" loading="lazy">Завантаження форми…</iframe>
+      </div>
+      <p class="fallback">Не відкривається форма? Напиши нам на сайт ГО — <a href="https://zhinocha.org/" target="_blank" rel="noopener">zhinocha.org</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="donors">
+      <div class="donors-title">Підтримано · Supported by</div>
+      <div class="donors-row">
+        <!-- DDI -->
+        <svg viewBox="0 0 320 80" aria-label="Digital Democracy Initiative" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="80" fill="#fff"/><g transform="translate(8,10)"><circle cx="8" cy="8" r="4" fill="#1f3a8a"/><circle cx="22" cy="6" r="3" fill="#e63946"/><circle cx="36" cy="10" r="3.5" fill="#ffb703"/><circle cx="48" cy="6" r="3" fill="#2a9d8f"/><circle cx="60" cy="10" r="3" fill="#9d4edd"/><circle cx="6" cy="22" r="3" fill="#06aed5"/><circle cx="20" cy="20" r="3.5" fill="#f72585"/><circle cx="34" cy="24" r="3" fill="#3a86ff"/><circle cx="48" cy="22" r="3" fill="#fb5607"/><circle cx="60" cy="24" r="3" fill="#8338ec"/><circle cx="10" cy="36" r="3" fill="#ffbe0b"/><circle cx="24" cy="38" r="3" fill="#06d6a0"/><circle cx="38" cy="36" r="3.5" fill="#ef476f"/><circle cx="52" cy="38" r="3" fill="#118ab2"/></g><text x="90" y="36" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#111">Digital Democracy</text><text x="90" y="60" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#111">Initiative</text></svg>
+        <!-- CIVICUS -->
+        <svg viewBox="0 0 240 100" aria-label="CIVICUS" xmlns="http://www.w3.org/2000/svg"><rect width="240" height="100" fill="#fff"/><g transform="translate(80,4)"><circle cx="14" cy="10" r="6" fill="#f39200"/><circle cx="40" cy="6" r="6" fill="#0061af"/><circle cx="66" cy="10" r="6" fill="#00a651"/><circle cx="-2" cy="22" r="5" fill="#1f3a8a"/><circle cx="80" cy="22" r="5" fill="#e30613"/><path d="M-6 38 Q40 28 86 38 Q40 56 -6 38 Z" fill="#0061af"/><path d="M2 44 Q40 56 78 44 Q60 70 40 70 Q20 70 2 44 Z" fill="#00aeef"/></g><text x="120" y="92" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="22" font-weight="900" fill="#0061af" letter-spacing="2">CIVICUS</text></svg>
+        <!-- Metamorphosis -->
+        <svg viewBox="0 0 320 80" aria-label="Metamorphosis" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="80" fill="#fff"/><g transform="translate(8,10)"><rect x="0" y="10" width="14" height="14" fill="#1a1a1a"/><rect x="14" y="0" width="14" height="14" fill="#f57f17"/><rect x="14" y="14" width="14" height="14" fill="#ffd54f"/><rect x="0" y="24" width="14" height="6" fill="#ffd54f"/></g><text x="50" y="32" font-family="Courier New,monospace" font-size="18" font-weight="900" fill="#111">META</text><text x="105" y="32" font-family="Courier New,monospace" font-size="18" font-weight="900" fill="#f57f17">MORPHOSIS</text><line x1="50" y1="42" x2="270" y2="42" stroke="#111" stroke-width="1"/><text x="50" y="58" font-family="Courier New,monospace" font-size="11" fill="#111">Foundation for Internet and Society</text></svg>
+        <!-- TechSoup -->
+        <svg viewBox="0 0 240 80" aria-label="TechSoup" xmlns="http://www.w3.org/2000/svg"><rect width="240" height="80" fill="#fff"/><text x="120" y="52" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="38" font-weight="900" fill="#1f2937">tech<tspan fill="#f97316">soup</tspan></text></svg>
+        <!-- Digital Activism Program -->
+        <svg viewBox="0 0 260 80" aria-label="Digital Activism Program" xmlns="http://www.w3.org/2000/svg"><rect width="260" height="80" fill="#fff"/><g transform="translate(8,12)"><rect x="0" y="8" width="14" height="20" fill="#f97316"/><rect x="18" y="0" width="14" height="28" fill="#7c3aed"/><circle cx="40" cy="20" r="8" fill="#7c3aed"/></g><text x="64" y="36" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="800" fill="#111">Digital</text><text x="64" y="58" font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="800" fill="#111">Activism Program</text></svg>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 ГО «Українська Валькірія» · Реалізує проєкт</div>
+      <div><a href="https://zhinocha.org/" target="_blank" rel="noopener">zhinocha.org ↗</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
