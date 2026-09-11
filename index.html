@@ -27,6 +27,11 @@
   .btn-outline{background:transparent;border-color:var(--navy);color:var(--navy)}
   .btn-outline:hover{background:var(--navy);color:#fff}
 
+  .funder-bar{background:#fff;border-bottom:1px solid var(--line)}
+  .funder-bar .container{display:flex;align-items:center;padding-top:14px;padding-bottom:14px}
+  .funder-bar svg{height:58px;width:auto;display:block}
+  @media(max-width:720px){.funder-bar svg{height:44px}}
+
   header{position:sticky;top:0;background:rgba(251,250,247,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
   header .container{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
   .brand{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:700;color:var(--navy);border:0}
@@ -70,14 +75,21 @@
   footer{background:var(--navy);color:#cbd5e1;padding:50px 0 26px;margin-top:60px}
   footer .donors{background:#fff;padding:26px;border-radius:14px}
   .donors-title{font-size:.74rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;text-align:center}
-  .donors-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:30px}
-  .donors-row svg{height:50px;width:auto}
+  .donors-row{display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:30px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .donors-row svg{height:50px;width:auto;flex:0 0 auto}
+  @media(max-width:720px){.donors-row{justify-content:flex-start;gap:20px}.donors-row svg{height:38px}}
   .footer-bottom{margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.88rem;color:#94a3b8}
   .footer-bottom a{color:var(--gold);border:0}
   .footer-bottom a:hover{color:#fff}
 </style>
 </head>
 <body>
+
+<div class="funder-bar">
+  <div class="container">
+    <svg viewBox="0 0 320 80" aria-label="Digital Democracy Initiative" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="80" fill="#fff"/><g transform="translate(8,10)"><circle cx="8" cy="8" r="4" fill="#1f3a8a"/><circle cx="22" cy="6" r="3" fill="#e63946"/><circle cx="36" cy="10" r="3.5" fill="#ffb703"/><circle cx="48" cy="6" r="3" fill="#2a9d8f"/><circle cx="60" cy="10" r="3" fill="#9d4edd"/><circle cx="6" cy="22" r="3" fill="#06aed5"/><circle cx="20" cy="20" r="3.5" fill="#f72585"/><circle cx="34" cy="24" r="3" fill="#3a86ff"/><circle cx="48" cy="22" r="3" fill="#fb5607"/><circle cx="60" cy="24" r="3" fill="#8338ec"/><circle cx="10" cy="36" r="3" fill="#ffbe0b"/><circle cx="24" cy="38" r="3" fill="#06d6a0"/><circle cx="38" cy="36" r="3.5" fill="#ef476f"/><circle cx="52" cy="38" r="3" fill="#118ab2"/></g><text x="90" y="36" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#111">Digital Democracy</text><text x="90" y="60" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#111">Initiative</text></svg>
+  </div>
+</div>
 
 <header>
   <div class="container">
@@ -159,8 +171,6 @@
     <div class="donors">
       <div class="donors-title">Підтримано · Supported by</div>
       <div class="donors-row">
-        <!-- DDI -->
-        <svg viewBox="0 0 320 80" aria-label="Digital Democracy Initiative" xmlns="http://www.w3.org/2000/svg"><rect width="320" height="80" fill="#fff"/><g transform="translate(8,10)"><circle cx="8" cy="8" r="4" fill="#1f3a8a"/><circle cx="22" cy="6" r="3" fill="#e63946"/><circle cx="36" cy="10" r="3.5" fill="#ffb703"/><circle cx="48" cy="6" r="3" fill="#2a9d8f"/><circle cx="60" cy="10" r="3" fill="#9d4edd"/><circle cx="6" cy="22" r="3" fill="#06aed5"/><circle cx="20" cy="20" r="3.5" fill="#f72585"/><circle cx="34" cy="24" r="3" fill="#3a86ff"/><circle cx="48" cy="22" r="3" fill="#fb5607"/><circle cx="60" cy="24" r="3" fill="#8338ec"/><circle cx="10" cy="36" r="3" fill="#ffbe0b"/><circle cx="24" cy="38" r="3" fill="#06d6a0"/><circle cx="38" cy="36" r="3.5" fill="#ef476f"/><circle cx="52" cy="38" r="3" fill="#118ab2"/></g><text x="90" y="36" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#111">Digital Democracy</text><text x="90" y="60" font-family="Georgia,serif" font-size="20" font-weight="700" fill="#111">Initiative</text></svg>
         <!-- CIVICUS -->
         <svg viewBox="0 0 240 100" aria-label="CIVICUS" xmlns="http://www.w3.org/2000/svg"><rect width="240" height="100" fill="#fff"/><g transform="translate(80,4)"><circle cx="14" cy="10" r="6" fill="#f39200"/><circle cx="40" cy="6" r="6" fill="#0061af"/><circle cx="66" cy="10" r="6" fill="#00a651"/><circle cx="-2" cy="22" r="5" fill="#1f3a8a"/><circle cx="80" cy="22" r="5" fill="#e30613"/><path d="M-6 38 Q40 28 86 38 Q40 56 -6 38 Z" fill="#0061af"/><path d="M2 44 Q40 56 78 44 Q60 70 40 70 Q20 70 2 44 Z" fill="#00aeef"/></g><text x="120" y="92" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="22" font-weight="900" fill="#0061af" letter-spacing="2">CIVICUS</text></svg>
         <!-- Metamorphosis -->
