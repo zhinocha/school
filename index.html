@@ -28,8 +28,9 @@
   .btn-outline:hover{background:var(--navy);color:#fff}
 
   .funder-bar{background:#fff;border-bottom:1px solid var(--line)}
-  .funder-bar .container{display:flex;align-items:center;padding-top:10px;padding-bottom:10px}
-  .funder-bar svg{height:38px;width:auto;display:block}
+  .funder-bar .container{display:flex;align-items:center;padding-top:14px;padding-bottom:14px}
+  .funder-bar svg{height:58px;width:auto;display:block}
+  @media(max-width:720px){.funder-bar svg{height:44px}}
 
   header{position:sticky;top:0;background:rgba(251,250,247,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:50}
   header .container{display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px}
@@ -74,8 +75,9 @@
   footer{background:var(--navy);color:#cbd5e1;padding:50px 0 26px;margin-top:60px}
   footer .donors{background:#fff;padding:26px;border-radius:14px}
   .donors-title{font-size:.74rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-bottom:16px;text-align:center}
-  .donors-row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:30px}
-  .donors-row svg{height:50px;width:auto}
+  .donors-row{display:flex;align-items:center;justify-content:center;flex-wrap:nowrap;gap:30px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .donors-row svg{height:50px;width:auto;flex:0 0 auto}
+  @media(max-width:720px){.donors-row{justify-content:flex-start;gap:20px}.donors-row svg{height:38px}}
   .footer-bottom{margin-top:30px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.88rem;color:#94a3b8}
   .footer-bottom a{color:var(--gold);border:0}
   .footer-bottom a:hover{color:#fff}
